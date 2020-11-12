@@ -1,0 +1,37 @@
+{
+  "name": "",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "mock": "nodemon --watch ./mockServer -q ./mockServer/index.js",
+    "watch": "epay-sparta-service development",
+    "prod": "epay-sparta-service production",
+    "analyze": "epay-sparta-service production --analyze",
+    "online": "epay-sparta-service production --online",
+    "lint": "epay-sparta-service lint",
+    "dev": "concurrently \"npm run mock\" \"npm run watch\" --kill-others"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
+  },
+  "author": "codelittleprince",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^3.6.1",
+    "husky": "^3.1.0",
+    "koa-mock-switch": "^2.1.1",
+    "mockjs": "^1.0.1-beta3",
+    "nodemon": "^2.0.1"
+  },
+  "dependencies": {
+    "@epay-sparta/cli-service": "^0.1.2",
+    "axios": "^0.19.0",
+    "cross-env": "^5.2.0",
+    "vue": "^2.6.10",
+    "vue-router": "^3.1.3",
+    "vuex": "^3.1.2"
+  }
+}
